@@ -4,7 +4,7 @@
     <metadata>
 
         <id>Mongo2Go</id>
-        <version>0.2.0</version>
+        <version>0.2.1-ssginternal</version>
 
         <title>Mongo2Go</title>
         <authors>Johannes Hoppe and many contributors</authors>

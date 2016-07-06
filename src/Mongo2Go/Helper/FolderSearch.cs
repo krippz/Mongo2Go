@@ -20,7 +20,7 @@ namespace Mongo2Go.Helper
         {
             string currentPath = startPath;
 
-            foreach (var part in searchPattern.Split(new[] { @"\" }, StringSplitOptions.None))
+            foreach (var part in searchPattern.Split(new[] { Path.DirectorySeparatorChar }, StringSplitOptions.None))
             {
                 string[] matchesDirectory = Directory.GetDirectories(currentPath, part);
                 if (!matchesDirectory.Any())

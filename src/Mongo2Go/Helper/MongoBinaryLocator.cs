@@ -5,7 +5,7 @@ namespace Mongo2Go.Helper
 
     public class MongoBinaryLocator : IMongoBinaryLocator
     {
-        private string nugetPrefix = @"packages\Mongo2Go*";
+        private string nugetPrefix = System.IO.Path.Combine ("packages", "Mongo2Go*");
         private string searchPattern = "";
 
         public MongoBinaryLocator (string binSearchPattern)

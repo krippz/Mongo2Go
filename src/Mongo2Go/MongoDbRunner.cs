@@ -95,7 +95,7 @@ namespace Mongo2Go
             }
 
             _fileSystem.CreateFolder(dataDirectory);
-            _fileSystem.DeleteFile(@"{0}\{1}".Formatted(dataDirectory, MongoDbDefaults.Lockfile));
+            _fileSystem.DeleteFile(@"{0}{1}{2}".Formatted(dataDirectory, System.IO.Path.DirectorySeparatorChar.ToString (), MongoDbDefaults.Lockfile));
             _mongoDbProcess = processStarter.Start(_mongoBin.ResolveBinariesDirectory(), dataDirectory, _port, true);
 
             State = State.Running;
@@ -114,7 +114,7 @@ namespace Mongo2Go
 
             _dataDirectoryWithPort = "{0}_{1}".Formatted(dataDirectory, _port);
             _fileSystem.CreateFolder(_dataDirectoryWithPort);
-            _fileSystem.DeleteFile(@"{0}\{1}".Formatted(_dataDirectoryWithPort, MongoDbDefaults.Lockfile));
+            _fileSystem.DeleteFile(@"{0}{1}{2}".Formatted(_dataDirectoryWithPort, System.IO.Path.DirectorySeparatorChar.ToString(), MongoDbDefaults.Lockfile));
             _mongoDbProcess = processStarter.Start(_mongoBin.ResolveBinariesDirectory(), _dataDirectoryWithPort, _port);
 
             State = State.Running;
